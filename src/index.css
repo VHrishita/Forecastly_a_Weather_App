@@ -264,23 +264,19 @@ body {
   text-align: center; 
 }
 
-/* =========================
-   APP ROOT FLEX LAYOUT
-========================= */
+
 .app-root {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* full viewport height */
+  min-height: 100vh;
 }
 
-/* main app content grows to fill space */
+
 .app-wrap {
   flex: 1;
 }
 
-/* =========================
-   FOOTER
-========================= */
+
 .footer {
   position: fixed;   /* stick to viewport bottom */
   bottom: 0;
