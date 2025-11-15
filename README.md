@@ -27,6 +27,12 @@ Forecastly is your friendly, interactive weather app that brings the sky right t
 
 ---
 
+## 🚀 Live Site
+
+🔗 Visit here → **[Forecastly](https://forecastly-a-weather-app.vercel.app/)**
+
+---
+
 ### 📬 Get in Touch
 
 - LinkedIn: [vempali-hrishita](https://www.linkedin.com/in/vempali-hrishita-95b21b329/)  
