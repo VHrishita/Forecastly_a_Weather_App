@@ -149,7 +149,7 @@ body {
   width: 100%;
   padding: 18px;
   border-radius: 14px;
-  background: rgba(0, 0, 0, 0.3); /* darker than previous glass */
+  background: rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 12px 40px rgba(31, 30, 30, 0.7);
   align-items: center;
@@ -215,9 +215,7 @@ body {
 
 
 
-/* =========================
-   FORECAST
-   ========================= */
+
 .forecast-wrap {
   margin-top: 18px;
   width: 100%;
@@ -235,14 +233,14 @@ body {
 }
 .forecast-card {
   display: flex;
-  flex-direction: column; /* stack content vertically */
-  align-items: center;    /* center everything horizontally */
-  gap: 6px;               /* spacing between items */
+  flex-direction: column; 
+  align-items: center;    
+  gap: 6px;              
   max-width: 740px;
   width: 100%;
   padding: 18px;
   border-radius: 14px;
-  background: rgba(0, 0, 0, 0.3); /* darker than previous glass */
+  background: rgba(0, 0, 0, 0.3); 
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -250,20 +248,20 @@ body {
   font-size: 13px;
   margin-bottom: 6px;
   color: rgba(255,255,255,0.8);
-  text-align: center; /* center date text */
+  text-align: center; 
 }
 
 .f-cond {
   font-size: 13px;
   margin-top: 6px;
   color: rgba(255,255,255,0.9);
-  text-align: center; /* optional: center condition text */
+  text-align: center;
 }
 
 .f-temps {
   margin-top: 8px;
   color: rgba(255,255,255,0.9);
-  text-align: center; /* optional: center temps text */
+  text-align: center; 
 }
 
 /* =========================
