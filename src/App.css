@@ -1,0 +1,159 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  overflow: hidden;
+}
+
+/* MAIN CONTAINER SETUP */
+.bg-container {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+/* ---------------------------------------------------
+    A) PREMIUM SMOOTH ANIMATED FULLSCREEN GRADIENT
+--------------------------------------------------- */
+.animated-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    -45deg,
+    #3f51b5,
+    #2196f3,
+    #5c6bc0,
+    #1e88e5,
+    #283593
+  );
+  background-size: 400% 400%;
+  animation: gradientMove 18s ease infinite;
+  z-index: -3;
+  filter: brightness(0.9);
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* VIGNETTE */
+.vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle, transparent 40%, rgba(0,0,0,0.6));
+  z-index: -1;
+}
+
+/* ---------------------------------------------------
+    CLOUDS (improved looks)
+--------------------------------------------------- */
+.clouds {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  top: 10%;
+  left: -50%;
+  z-index: -1;
+}
+
+.cloud {
+  position: absolute;
+  width: 350px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.55);
+  filter: blur(18px);
+  border-radius: 80px;
+  animation: cloudMove 40s linear infinite;
+}
+
+.cloud-2 {
+  top: 25%;
+  left: 40%;
+  width: 450px;
+  height: 150px;
+  animation-duration: 55s;
+}
+
+@keyframes cloudMove {
+  0% { transform: translateX(-60%); }
+  100% { transform: translateX(160%); }
+}
+
+/* ---------------------------------------------------
+    RAIN
+--------------------------------------------------- */
+.rain {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.drop {
+  position: absolute;
+  width: 2px;
+  height: 18px;
+  background: rgba(200, 200, 255, 0.7);
+  animation: rainFall linear infinite;
+}
+
+@keyframes rainFall {
+  0% { transform: translateY(-20px); }
+  100% { transform: translateY(120vh); }
+}
+
+/* ---------------------------------------------------
+    SNOW
+--------------------------------------------------- */
+.snow {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.flake {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: snowFall linear infinite;
+}
+
+@keyframes snowFall {
+  0% { transform: translateY(-10px); }
+  100% { transform: translateY(110vh); }
+}
+
+/* ---------------------------------------------------
+    THUNDER
+--------------------------------------------------- */
+.lightning {
+  position: absolute;
+  inset: 0;
+  background: white;
+  opacity: 0;
+  animation: lightningFlash 3s infinite;
+  z-index: 2;
+}
+
+@keyframes lightningFlash {
+  0%, 97%, 100% { opacity: 0; }
+  20% { opacity: 0.3; }
+  21% { opacity: 0; }
+  23% { opacity: 0.5; }
+  24% { opacity: 0; }
+}

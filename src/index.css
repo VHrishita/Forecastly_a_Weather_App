@@ -1,0 +1,594 @@
+/* =========================
+   GLOBAL RESET + VARIABLES
+   ========================= */
+:root {
+  --card-width: 760px;
+  --glass-bg: rgba(255,255,255,0.06);
+  --glass-border: rgba(255,255,255,0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: Inter, Poppins, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #0f172a 0%, #071133 100%);
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================
+   APP ROOT
+   ========================= */
+.app-root {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0b1226 0%, #0b2340 100%);
+}
+
+.app-wrap {
+  position: relative;
+  z-index: 6;
+  max-width: var(--card-width);
+  margin: 48px auto;
+  padding: 28px;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+.header {
+  text-align: center;
+  margin-bottom: 18px;
+}
+.header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(-45deg, #00072d, #072f5f, #164f75, #36859b);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 5s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.header .sub {
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.8);
+  margin-top: 4px;
+}
+
+
+.sub-third {
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(255,255,255,0.65);
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   MAIN
+   ========================= */
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+/* Search */
+.control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+.search {
+  display: flex;
+  gap: 10px;
+}
+.search input {
+  width: 360px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(248, 248, 248, 0.1);
+  background: rgba(228, 211, 211, 0.35); /* darker input */
+  color: #fff;
+  outline: none;
+  transition: box-shadow .18s ease, transform .12s ease;
+}
+
+.search input:focus {
+  box-shadow: 0 6px 30px rgba(2,6,23,0.6);
+  transform: translateY(-2px);
+}
+.btn {
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(180deg, #ffffffc9, #ffffffa1);
+  color: #0b1226;
+  font-weight: 600;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(2,6,23,0.5);
+}
+
+.notes {
+  text-align: center;
+  color: rgba(255,255,255,0.65);
+  font-size: 12px;
+}
+
+.center {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* =========================
+   CARD
+   ========================= */
+.card.glass {
+  display: flex;
+  gap: 16px;
+  max-width: 740px;
+  width: 100%;
+  padding: 18px;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.3); /* darker than previous glass */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 40px rgba(31, 30, 30, 0.7);
+  align-items: center;
+}
+
+
+.card-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 180px;
+}
+.cond-icon {
+  width: 94px;
+  height: 94px;
+}
+.temp {
+  font-size: 44px;
+  font-weight: 700;
+  margin-top: 6px;
+}
+.cond-text {
+  color: rgba(255,255,255,0.9);
+  margin-top: 6px;
+}
+
+.card-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+.loc {
+  display: flex;
+  flex-direction: column;
+}
+.city {
+  font-size: 20px;
+  font-weight: 700;
+}
+.country {
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+  margin-top: 4px;
+}
+
+.extra {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+.extra-item {
+  display: flex;
+  flex-direction: column; /* stack items vertically */
+  gap: 4px; /* smaller gap for vertical stacking */
+  align-items: flex-start; /* align text to left, adjust as needed */
+  background: rgba(0,0,0,0.25); /* keep darker background */
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+
+
+
+/* =========================
+   FORECAST
+   ========================= */
+.forecast-wrap {
+  margin-top: 18px;
+  width: 100%;
+}
+.forecast-title {
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: rgba(255,255,255,0.9);
+}
+.forecast-row {
+  display: flex;
+  gap: 12px;
+  overflow: auto;
+  padding-bottom: 8px;
+}
+.forecast-card {
+  display: flex;
+  flex-direction: column; /* stack content vertically */
+  align-items: center;    /* center everything horizontally */
+  gap: 6px;               /* spacing between items */
+  max-width: 740px;
+  width: 100%;
+  padding: 18px;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.3); /* darker than previous glass */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.f-date {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: rgba(255,255,255,0.8);
+  text-align: center; /* center date text */
+}
+
+.f-cond {
+  font-size: 13px;
+  margin-top: 6px;
+  color: rgba(255,255,255,0.9);
+  text-align: center; /* optional: center condition text */
+}
+
+.f-temps {
+  margin-top: 8px;
+  color: rgba(255,255,255,0.9);
+  text-align: center; /* optional: center temps text */
+}
+
+/* =========================
+   APP ROOT FLEX LAYOUT
+========================= */
+.app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full viewport height */
+}
+
+/* main app content grows to fill space */
+.app-wrap {
+  flex: 1;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  position: fixed;   /* stick to viewport bottom */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: ffffff;
+  padding: 12px 0;
+  background: rgba(0,0,0,0.1); /* optional semi-transparent bg */
+  z-index: 10;       /* above background videos */
+}
+
+
+/* =========================
+   ERROR BOX
+   ========================= */
+.error {
+  background: rgba(255,0,0,0.12);
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: #ffd6d6;
+}
+
+/* =========================
+   ANIMATED BACKGROUND LAYERS
+   ========================= */
+.bg-anim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bg-anim .vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 40% at 50% 30%, rgba(255,255,255,0.02), transparent 20%),
+    radial-gradient(60% 40% at 50% 70%, rgba(0,0,0,0.25), transparent 40%);
+  mix-blend-mode: overlay;
+}
+
+/* =========================
+   CLOUDS (STRONGER)
+   ========================= */
+.clouds {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.cloud {
+  position: absolute;
+  top: 10%;
+  left: -30%;
+  width: 500px;
+  height: 180px;
+  background: rgba(255,255,255,0.18);
+  border-radius: 100px;
+  filter: blur(4px);
+  opacity: 0.9;
+  animation: cloudMove 22s linear infinite;
+}
+
+.cloud-2 {
+  top: 35%;
+  left: -40%;
+  width: 650px;
+  height: 220px;
+  opacity: 0.75;
+  background: rgba(255,255,255,0.15);
+  animation-duration: 30s;
+}
+
+@keyframes cloudMove {
+  0% {
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(160%);
+  }
+}
+
+/* =========================
+   RAIN (STRONGER)
+   ========================= */
+.rain .drop {
+  position: absolute;
+  top: -10%;
+  width: 3px;
+  height: 22vh;
+  background: rgba(255,255,255,0.5);
+  transform: rotate(10deg);
+  animation: dropFall 0.7s linear infinite;
+}
+
+@keyframes dropFall {
+  0% {
+    transform: translateY(-20vh) rotate(10deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(120vh) rotate(10deg);
+    opacity: 0;
+  }
+}
+
+/* =========================
+   SNOW (STRONGER)
+   ========================= */
+.snow .flake {
+  position: absolute;
+  top: -10%;
+  width: 10px;
+  height: 10px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 50%;
+  filter: blur(1px);
+  opacity: 0.95;
+  animation: flakeFall 7s linear infinite;
+}
+
+@keyframes flakeFall {
+  0% {
+    transform: translateY(-20vh) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(120vh) translateX(30px);
+    opacity: 0;
+  }
+}
+
+/* =========================
+   THUNDER (POWERFUL FLASH)
+   ========================= */
+.lightning {
+  position: absolute;
+  inset: 25% 35%;
+  width: 30%;
+  height: 30%;
+  background: rgba(255,255,255,0.4);
+  box-shadow: 0 0 80px rgba(255,255,255,0.7);
+  filter: blur(10px);
+  animation: flash 2s infinite;
+  opacity: 0;
+}
+
+@keyframes flash {
+  0%, 100% { opacity: 0; }
+  5% { opacity: 0.8; }
+  8% { opacity: 0.2; }
+  12% { opacity: 0.6; }
+  15% { opacity: 0; }
+}
+
+/* =========================
+   FOG (THICK)
+   ========================= */
+.clouds.fog .cloud {
+  filter: blur(14px);
+  opacity: 0.6;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media (max-width: 820px) {
+  .search input {
+    width: 220px;
+  }
+  .card.glass {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .card-right {
+    align-items: center;
+  }
+  .app-wrap {
+    margin: 20px;
+    padding: 16px;
+  }
+  :root {
+    --card-width: 420px;
+  }
+}
+
+/* -------------------------
+  MP4 Layered Background + Parallax
+   - Put this in index.css / App.css
+--------------------------*/
+
+/* container sits behind the UI */
+.bg-video-container {
+  position: fixed;
+  inset: 0;
+  z-index: 0; /* make sure your app content is above (app-wrap z-index should be >0) */
+  overflow: hidden;
+  --parallax-x: 0px;
+  --parallax-y: 0px;
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* video base style (shared) */
+.bg-video {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* center */
+  object-fit: cover;
+  width: 120vw; /* slightly bigger to allow pan */
+  height: 120vh;
+  min-width: 100%;
+  min-height: 100%;
+  will-change: transform, opacity, filter;
+  filter: saturate(1.02) contrast(1.02);
+  mix-blend-mode: screen; /* soft blend — tweak if you prefer normal */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: opacity 0.6s ease;
+}
+
+/* layer-specific transforms + parallax influence */
+.bg-video.layer-1 {
+  z-index: 1;
+  opacity: 0.95;
+  transform-origin: center;
+  animation: slowZoom1 40s linear infinite;
+  /* nearest layer responds most to parallax */
+  transform: translate(calc(-50% + var(--parallax-x) * 0.015), calc(-50% + var(--parallax-y) * 0.02)) scale(1.06);
+}
+
+.bg-video.layer-2 {
+  z-index: 1;
+  opacity: 0.9;
+  animation: slowZoom2 55s linear infinite;
+  transform: translate(calc(-50% + var(--parallax-x) * 0.009), calc(-50% + var(--parallax-y) * 0.012)) scale(1.04);
+}
+
+.bg-video.layer-3 {
+  z-index: 1;
+  opacity: 0.82;
+  animation: slowZoom3 80s linear infinite;
+  transform: translate(calc(-50% + var(--parallax-x) * 0.004), calc(-50% + var(--parallax-y) * 0.006)) scale(1.02);
+}
+
+/* subtle slow zoom/pan animations for cinematic effect */
+@keyframes slowZoom1 {
+  0% { transform: translate(calc(-50% + var(--parallax-x) * 0.015), calc(-50% + var(--parallax-y) * 0.02)) scale(1.06) rotate(0.00deg); }
+  50% { transform: translate(calc(-50% + var(--parallax-x) * 0.015), calc(-50% + var(--parallax-y) * 0.02)) scale(1.08) rotate(0.02deg); }
+  100% { transform: translate(calc(-50% + var(--parallax-x) * 0.015), calc(-50% + var(--parallax-y) * 0.02)) scale(1.06) rotate(0.00deg); }
+}
+@keyframes slowZoom2 {
+  0% { transform: translate(calc(-50% + var(--parallax-x) * 0.009), calc(-50% + var(--parallax-y) * 0.012)) scale(1.04); }
+  50% { transform: translate(calc(-50% + var(--parallax-x) * 0.009), calc(-50% + var(--parallax-y) * 0.012)) scale(1.06); }
+  100% { transform: translate(calc(-50% + var(--parallax-x) * 0.009), calc(-50% + var(--parallax-y) * 0.012)) scale(1.04); }
+}
+@keyframes slowZoom3 {
+  0% { transform: translate(calc(-50% + var(--parallax-x) * 0.004), calc(-50% + var(--parallax-y) * 0.006)) scale(1.02); }
+  50% { transform: translate(calc(-50% + var(--parallax-x) * 0.004), calc(-50% + var(--parallax-y) * 0.006)) scale(1.03); }
+  100% { transform: translate(calc(-50% + var(--parallax-x) * 0.004), calc(-50% + var(--parallax-y) * 0.006)) scale(1.02); }
+}
+
+/* fallback gradient when videos are missing */
+.bg-gradient-fallback {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(135deg, #3f51b5 0%, #1e88e5 50%, #283593 100%);
+  background-size: 400% 400%;
+  animation: fallbackGradient 14s linear infinite;
+  opacity: 0.98;
+}
+
+@keyframes fallbackGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .bg-video,
+  .bg-gradient-fallback {
+    animation: none !important;
+    transition: none !important;
+    transform: translate(-50%, -50%) scale(1) !important;
+  }
+}
+
