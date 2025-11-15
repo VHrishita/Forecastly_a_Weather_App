@@ -1,6 +1,4 @@
-/* =========================
-   GLOBAL RESET + VARIABLES
-   ========================= */
+
 :root {
   --card-width: 760px;
   --glass-bg: rgba(255,255,255,0.06);
@@ -25,9 +23,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* =========================
-   APP ROOT
-   ========================= */
+
 .app-root {
   position: relative;
   min-height: 100vh;
@@ -43,9 +39,7 @@ body {
   padding: 28px;
 }
 
-/* =========================
-   HEADER
-   ========================= */
+
 .header {
   text-align: center;
   margin-bottom: 18px;
@@ -85,16 +79,14 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* =========================
-   MAIN
-   ========================= */
+
 .main {
   display: grid;
   grid-template-columns: 1fr;
   gap: 18px;
 }
 
-/* Search */
+
 .control {
   display: flex;
   justify-content: center;
@@ -149,9 +141,7 @@ body {
   flex-direction: column;
 }
 
-/* =========================
-   CARD
-   ========================= */
+
 .card.glass {
   display: flex;
   gap: 16px;
@@ -215,10 +205,10 @@ body {
 }
 .extra-item {
   display: flex;
-  flex-direction: column; /* stack items vertically */
-  gap: 4px; /* smaller gap for vertical stacking */
-  align-items: flex-start; /* align text to left, adjust as needed */
-  background: rgba(0,0,0,0.25); /* keep darker background */
+  flex-direction: column; 
+  gap: 4px; 
+  align-items: flex-start; 
+  background: rgba(0,0,0,0.25);
   padding: 8px 10px;
   border-radius: 10px;
 }
