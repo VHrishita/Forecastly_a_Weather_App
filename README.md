@@ -43,5 +43,5 @@ Forecastly is your friendly, interactive weather app that brings the sky right t
 **All Rights Reserved | Vempali Hrishita | 2025**  
 
 ---
-
+If this Project adds value to you, consider leaving a star on the repository⭐
 > Fun fact: Forecastly doesn’t just show the weather — it makes your screen feel like the sky itself. 🌈
