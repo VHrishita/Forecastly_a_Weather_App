@@ -51,7 +51,7 @@ export default function App() {
   else if (condition.includes("sunny") || condition.includes("clear")) bgType = "clear";
   else if (condition.includes("snow") || condition.includes("sleet") || condition.includes("blizzard")) bgType = "snow";
   else if (condition.includes("cloud")) bgType = "cloud";
-  else if (condition.includes("thunder") || condition.includes("storm")) bgType = "thunder";
+  else if (condition.includes("thunder") || condition.includes("storm")) || condition.includes("patchy")) bgType = "thunder";
   else if (condition.includes("mist") || condition.includes("fog")) bgType = "fog";
 
   return (
