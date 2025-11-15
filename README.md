@@ -1,16 +1,41 @@
-# React + Vite
+# Forecastly 🌤️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Peek into the sky and uncover its secrets!**  
 
-Currently, two official plugins are available:
+Forecastly is your friendly, interactive weather app that brings the sky right to your screen. 🌦️ Search any city worldwide and get real-time weather updates along with a 3-day forecast — all wrapped in **beautiful animated backgrounds** that match the weather mood!  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+### ✨ Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🔎 **City Search:** Look up weather by city name instantly.  
+- 🌡️ **Current Weather:** See temperature, conditions, and location at a glance.  
+- 📅 **3-Day Forecast:** Quick peek at min/max temps and conditions.  
+- 🎥 **Dynamic Backgrounds:** Rain, snow, clouds, thunder, fog, or clear skies — the background changes with the weather!  
+- 📱 **Responsive Design:** Works beautifully on both desktop and mobile.  
+- 💨 **Smooth Animations:** Framer Motion makes transitions and weather cards feel alive.  
+- 🖤 **Stylish UI:** Semi-transparent cards keep text readable over animated backgrounds.  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 💻 Tech Stack
+
+- **Frontend:** React, Framer Motion  
+- **Styling:** CSS, Responsive Layouts  
+- **API:** WeatherAPI  
+- **Build Tool:** Vite  
+
+---
+
+### 📬 Get in Touch
+
+- LinkedIn: [vempali-hrishita](https://www.linkedin.com/in/vempali-hrishita-95b21b329/)  
+- Email: vempalihrishita05@gmail.com  
+
+---
+
+**All Rights Reserved | Vempali Hrishita | 2025**  
+
+---
+
+> Fun fact: Forecastly doesn’t just show the weather — it makes your screen feel like the sky itself. 🌈
