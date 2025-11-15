@@ -5,7 +5,7 @@ import Forecast from "./components/Forecast.jsx";
 import AnimatedBackground from "./components/AnimatedBackground.jsx";
 import Loading from "./components/Loading.jsx";
 
-const API_KEY = "ebdf913131824d1887452436251511"; // your real key
+const API_KEY = "ebdf913131824d1887452436251511"; 
 
 export default function App() {
   const [city, setCity] = useState("");
