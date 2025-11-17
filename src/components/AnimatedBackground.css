@@ -8,7 +8,6 @@
   z-index: -1;
 }
 
-/* Base video style */
 .weather-layer {
   position: absolute;
   width: 120%;
@@ -20,7 +19,6 @@
   opacity: 0.9;
 }
 
-/* Layer animations (parallax effect) */
 .layer-1 {
   animation: move1 40s linear infinite;
   opacity: 1;
@@ -36,7 +34,6 @@
   opacity: 0.4;
 }
 
-/* Subtle floating motions */
 @keyframes move1 {
   0% { transform: translate(-50%, -50%) scale(1); }
   50% { transform: translate(-48%, -52%) scale(1.05); }
