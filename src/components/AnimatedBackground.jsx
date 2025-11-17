@@ -4,7 +4,6 @@ export default function AnimatedBackground({ type = "first" }) {
   const containerRef = useRef(null);
   const rafRef = useRef(null);
 
-  // smoothing for parallax
   const posRef = useRef({ x: 0, y: 0 });
   const targetRef = useRef({ x: 0, y: 0 });
 
@@ -22,9 +21,6 @@ export default function AnimatedBackground({ type = "first" }) {
 
   const layerFiles = mapping[type] || mapping["first"];
 
-  /* ---------------------------
-      CHECK IF VIDEOS EXIST
-  --------------------------- */
   useEffect(() => {
     let cancelled = false;
 
@@ -41,9 +37,6 @@ export default function AnimatedBackground({ type = "first" }) {
     return () => (cancelled = true);
   }, [type]);
 
-  /* ---------------------------
-      MOUSE + TOUCH PARALLAX
-  --------------------------- */
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -84,9 +77,6 @@ export default function AnimatedBackground({ type = "first" }) {
     };
   }, []);
 
-  /* ---------------------------
-      SMOOTHING / RAF LOOP
-  --------------------------- */
   useEffect(() => {
     function animate() {
       posRef.current.x += (targetRef.current.x - posRef.current.x) * 0.12;
@@ -113,9 +103,6 @@ export default function AnimatedBackground({ type = "first" }) {
     };
   }, []);
 
-  /* ---------------------------
-      RENDER
-  --------------------------- */
   return (
     <div
       ref={containerRef}
