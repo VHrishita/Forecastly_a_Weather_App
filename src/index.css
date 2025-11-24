@@ -295,10 +295,6 @@ body {
   border-radius: 10px;
   color: #ffd6d6;
 }
-
-/* =========================
-   ANIMATED BACKGROUND LAYERS
-   ========================= */
 .bg-anim {
   position: absolute;
   inset: 0;
