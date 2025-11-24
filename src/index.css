@@ -289,9 +289,7 @@ body {
   z-index: 10;
 }
 
-/* =========================
-   ERROR BOX
-   ========================= */
+
 .error {
   background: rgba(255,0,0,0.12);
   padding: 10px 12px;
