@@ -99,7 +99,7 @@ body {
   padding: 12px 14px;
   border-radius: 12px;
   border: 1px solid rgba(248, 248, 248, 0.1);
-  background: rgba(228, 211, 211, 0.35); /* darker input */
+  background: rgba(228, 211, 211, 0.35); 
   color: #fff;
   outline: none;
   transition: box-shadow .18s ease, transform .12s ease;
