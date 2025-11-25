@@ -344,10 +344,6 @@ body {
     transform: translateX(160%);
   }
 }
-
-/* =========================
-   RAIN (STRONGER)
-   ========================= */
 .rain .drop {
   position: absolute;
   top: -10%;
